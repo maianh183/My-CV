@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Nguyễn Vũ Mai Anh</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: #F9F8F7;
+    color: #2C2C2B;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .page {
+    max-width: 820px;
+    margin: 32px auto;
+    background: #fff;
+    border: 1px solid #E6E5E3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 12px rgba(0,0,0,.04);
+  }
+​
+  /* HEADER */
+  .header {
+    background: #2C2C2B;
+    color: #fff;
+    padding: 40px 48px 36px;
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #2783DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -1px;
+  }
+  .header-info h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .header-info .role {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+​
+  /* CONTACT BAR */
+  .contact-bar {
+    background: #2783DE;
+    padding: 12px 48px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #fff;
+    font-size: 13px;
+  }
+  .contact-item svg {
+    opacity: 0.85;
+    flex-shrink: 0;
+  }
+​
+  /* BODY */
+  .body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 600px;
+  }
+​
+  /* SIDEBAR */
+  .sidebar {
+    background: #F9F8F7;
+    border-right: 1px solid #E6E5E3;
+    padding: 36px 28px;
+  }
+  .sidebar-section {
+    margin-bottom: 32px;
+  }
+  .sidebar-section:last-child { margin-bottom: 0; }
+  .sidebar-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #2783DE;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E5F2FC;
+  }
+​
+  /* Skills */
+  .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .skill-name {
+    font-size: 13px;
+    color: #2C2C2B;
+    font-weight: 500;
+  }
+  .skill-bar-wrap {
+    width: 90px;
+    height: 5px;
+    background: #E6E5E3;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .skill-bar {
+    height: 100%;
+    background: #2783DE;
+    border-radius: 99px;
+  }
+​
+  /* Tags */
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: #E5F2FC;
+    color: #2783DE;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 99px;
+  }
+​
+  /* Info list */
+  .info-list { list-style: none; }
+  .info-list li {
+    font-size: 13px;
+    color: #2C2C2B;
+    padding: 4px 0;
+    padding-left: 12px;
+    position: relative;
+  }
+  .info-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2783DE;
+  }
+  .info-list li span { color: #7D7A75; font-size: 12px; display: block; }
+​
+  /* MAIN */
+  .main {
+    padding: 36px 40px;
+  }
+  .section {
+    margin-bottom: 32px;
+  }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #2783DE;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E5F2FC;
+  }
+​
+  /* Objective */
+  .objective-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2C2C2B;
+  }
+​
+  /* Education */
+  .edu-card {
+    background: #F9F8F7;
+    border: 1px solid #E6E5E3;
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .edu-school {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C2C2B;
+    margin-bottom: 2px;
+  }
+  .edu-major {
+    font-size: 13px;
+    color: #7D7A75;
+    margin-bottom: 8px;
+  }
+  .edu-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .edu-badge {
+    background: #E5F2FC;
+    color: #2783DE;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 99px;
+  }
+​
+  /* Experience placeholder */
+  .empty-card {
+    border: 2px dashed #E6E5E3;
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-align: center;
+    color: #7D7A75;
+    font-size: 13px;
+  }
+  .empty-card strong { display: block; margin-bottom: 4px; color: #2C2C2B; font-size: 14px; }
+​
+  /* Achievement */
+  .achievement-list { list-style: none; }
+  .achievement-list li {
+    font-size: 13.5px;
+    padding: 6px 0 6px 16px;
+    position: relative;
+    border-bottom: 1px solid #F0EFED;
+    color: #2C2C2B;
+    line-height: 1.55;
+  }
+  .achievement-list li:last-child { border-bottom: none; }
+  .achievement-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #46A171;
+    font-weight: 700;
+    font-size: 12px;
+    top: 7px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+​
+  <!-- HEADER -->
+  <div class="header">
+    <div class="avatar">MA</div>
+    <div class="header-info">
+      <h1>Nguyễn Vũ Mai Anh</h1>
+      <div class="role">Fresher Software Engineer</div>
+    </div>
+  </div>
+​
+  <!-- CONTACT BAR -->
+  <div class="contact-bar">
+    <div class="contact-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 18.92z"/></svg>
+      0946 854 992
+    </div>
+    <div class="contact-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      nvmaianh173@gmail.com
+    </div>
+    <div class="contact-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      TP. Hồ Chí Minh
+    </div>
+  </div>
+​
+  <div class="body">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+​
+      <div class="sidebar-section">
+        <div class="sidebar-title">Kỹ năng lập trình</div>
+        <div class="skill-item"><span class="skill-name">C++</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Java</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div></div>
+      </div>
+​
+      <div class="sidebar-section">
+        <div class="sidebar-title">Công cụ & Công nghệ</div>
+        <div class="tag-list">
+          <span class="tag">Git</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">IntelliJ</span>
+          <span class="tag">SQL</span>
+          <span class="tag">OOP</span>
+        </div>
+      </div>
+​
+      <div class="sidebar-section">
+        <div class="sidebar-title">Kỹ năng mềm</div>
+        <ul class="info-list">
+          <li>Làm việc nhóm</li>
+          <li>Tư duy phân tích</li>
+          <li>Giải quyết vấn đề</li>
+          <li>Học hỏi nhanh</li>
+          <li>Giao tiếp hiệu quả</li>
+        </ul>
+      </div>
+​
+      <div class="sidebar-section">
+        <div class="sidebar-title">Ngôn ngữ</div>
+        <ul class="info-list">
+          <li>Tiếng Việt <span>Bản ngữ</span></li>
+          <li>Tiếng Anh <span>Giao tiếp tốt</span></li>
+        </ul>
+      </div>
+​
+    </aside>
+​
+    <!-- MAIN -->
+    <main class="main">
+​
+      <div class="section">
+        <div class="section-title">Mục tiêu nghề nghiệp</div>
+        <p class="objective-text">
+          Là sinh viên ngành Công nghệ Phần mềm tại ĐH Bách khoa – ĐHQG TP.HCM, tôi mong muốn ứng tuyển vào vị trí Fresher Software Engineer để áp dụng kiến thức lập trình vào thực tiễn, học hỏi từ môi trường chuyên nghiệp và từng bước phát triển thành một kỹ sư phần mềm có năng lực. Tôi có khả năng học hỏi nhanh, tư duy logic tốt và tinh thần trách nhiệm cao trong công việc.
+        </p>
+      </div>
+​
+      <div class="section">
+        <div class="section-title">Học vấn</div>
+        <div class="edu-card">
+          <div class="edu-school">Đại học Bách khoa – ĐHQG TP.HCM</div>
+          <div class="edu-major">Kỹ thuật Phần mềm · Khoa Khoa học & Kỹ thuật Máy tính</div>
+          <div class="edu-meta">
+            <span class="edu-badge">2023 – 2027 (dự kiến)</span>
+          </div>
+        </div>
+      </div>
+​
+      <div class="section">
+        <div class="section-title">Dự án cá nhân</div>
+        <div class="edu-card">
+          <div class="edu-school">SaveCue — Ứng dụng lưu và quản lý nội dung xem sau</div>
+          <div class="edu-major">Dự án cá nhân · <a href="https://github.com/maianh183/SaveCue" target="_blank" rel="noopener noreferrer">GitHub: maianh183/SaveCue</a></div>
+          <p class="objective-text">Ứng dụng hướng đến việc lưu tập trung liên kết, hình ảnh và tài liệu từ nhiều nền tảng, hỗ trợ tìm kiếm và nhắc người dùng xem lại nội dung đã lưu.</p>
+          <ul class="info-list">
+            <li>Chức năng định hướng: nhận nội dung qua Share Intent, gắn tag và alias, lọc theo trạng thái và nhắc xem lại.</li>
+            <li>Kỹ năng: phân tích yêu cầu, xác định MVP, thiết kế luồng người dùng, tổ chức dữ liệu và quản lý mã nguồn bằng Git/GitHub.</li>
+          </ul>
+        </div>
+      </div>
+​
+      <div class="section">
+        <div class="section-title">Điểm nổi bật</div>
+        <ul class="achievement-list">
+          <li>Nền tảng lập trình vững chắc với C++, Python và Java thông qua chương trình đào tạo tại Bách Khoa.</li>
+          <li>Hiểu các nguyên lý OOP, cấu trúc dữ liệu và giải thuật cơ bản.</li>
+          <li>Có khả năng tự học và nghiên cứu tài liệu kỹ thuật bằng tiếng Anh.</li>
+          <li>Chủ động tìm kiếm cơ hội thực hành và nâng cao kỹ năng lập trình.</li>
+        </ul>
+      </div>
+​
+    </main>
+  </div>
+</div>
+</body>
+</html>
+​
